@@ -1,5 +1,9 @@
+# IDE Files
+.vs
+
 # Build Directories
 /*build*
+/*out*
 
 # Compiled Object files
 *.o

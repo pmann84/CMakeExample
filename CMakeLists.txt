@@ -7,14 +7,20 @@ project(
 	LANGUAGES CXX
 )
 
+# Disable the ZERO_CHECK project generation
+set(CMAKE_SUPPRESS_REGENERATION true)
+
 # Since googletest uses these flags we should too.
 SET(CMAKE_CXX_FLAGS_DEBUG "/MTd")
 SET(CMAKE_CXX_FLAGS_RELEASE "/MT")
 
+# Set output directory of all projects to be somewhere sensible
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 option(PACKAGE_TESTS "Build the tests" ON)
 if(PACKAGE_TESTS)
-    enable_testing()
-    include(GoogleTest)
     add_subdirectory(tests)
 endif()
 

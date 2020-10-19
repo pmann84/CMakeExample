@@ -18,3 +18,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE gtest_main)
 target_link_libraries(${PROJECT_NAME} PRIVATE gmock)
 target_link_libraries(${PROJECT_NAME} PRIVATE gmock_main)
 target_link_libraries(${PROJECT_NAME} PRIVATE ProjectLib)
+
+# Add install logic
+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
